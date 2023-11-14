@@ -1,0 +1,30 @@
+<div class="m-2 text-zinc-700">
+<%= form_with model: @producto do |form|%>
+    <% @producto.errors.full_messages.each do |error| %>
+        <div><%= error %></div>
+    <% end %>
+    <div>
+        <%= form.label :title, "Titulo", class:"text-teal-700"  %>:
+        <%= form.text_field :title, class:"w-full my-2 rounded-2xl text-gray-600 bg-white border-teal-700 text-xs sm:text-base", placeholder: 'Nombre del articulo' %>
+    </div>
+    <div>
+        <%= form.label :description, "Descripcion", class:"text-teal-700"  %>:
+        <%= form.text_area :description, class:"w-full my-2 rounded-2xl text-gray-600 gap-4 bg-white border-teal-700 text-xs sm:text-base", placeholder: 'Detalles del articulo' %>
+    </div>
+    <div>
+        <%= form.label :price, "Precio", class:"text-teal-700"  %>:
+        <%= form.text_field :price, class:"w-full my-2 rounded-2xl text-gray-600 bg-white border-teal-700 text-xs sm:text-base", placeholder: 'Costo Neto' %>
+    </div>
+    <div class="text-teal-700" > Categoria: 
+        <%= form.collection_select :category_id,  Category.all.order(name: :asc), :id, :name ,  class:"my-3 p-2 text-zinc-700"%>
+    </div>
+    <div class="text-zinc-700" >
+        <%= form.label :photo, "Agregar Imagen", class:"text-teal-700"  %>:
+        <%= form.file_field :photo, class:"w-full my-2 p-1"  %>
+    </div>
+    <br>
+    <button class="px-2 py-1 rounded-2xl border-2 border-teal-400 text-zinc-600 bg-teal-100 font-bold text-sm center">
+        <%= form.submit %>
+    </button>
+<% end %>
+</div>

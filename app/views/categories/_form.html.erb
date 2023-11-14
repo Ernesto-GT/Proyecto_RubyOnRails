@@ -1,0 +1,24 @@
+<%= form_with(model: category) do |form| %>
+  <% if category.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+        <% category.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mx-2">
+    <%= form.label :name,"Asignar Nombre", style: "display: block", class:"mx-2 text-teal-600"%>
+    <%= form.text_field :name, class:"w-full my-2 rounded-2xl text-gray-600 bg-white border-teal-700 text-xs sm:text-base", placeholder: 'Ej. Libros'  %>
+  </div>
+  <br>
+  <div>
+    <button class="bg-teal-100 border-2 border-teal-400 text-zinc-600 font-fold text-sm rounded-2xl mx-4 my-5 p-1">
+      <%= form.submit %>
+    </button>
+  </div>
+<% end %>

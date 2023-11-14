@@ -1,0 +1,33 @@
+<%= form_with(model: @usuario) do |form| %>
+    <div>
+        <% @usuario.errors.full_messages.each do |error| %>
+            <div><%= error%></div>
+        <% end %>
+    </div>
+    <br>
+    <div class=" text-white flex">
+        <%= image_tag 'icons/user.svg', width: 35, height: 35, class:"imageIcons" %> 
+        <%= form.text_field :username, required: true, class:"w-full text-zinc-600 rounded-2xl bg-teal-50 border-zinc-400", placeholder: 'Nombre de Usuario o Email' %>
+    </div>
+    <br>
+    <div class=" text-white flex">
+        <%= image_tag 'icons/email.svg', width: 35, height: 35, class:"imageIcons" %>     
+        <%= form.email_field :email, required: true, class:"w-full text-zinc-600 rounded-2xl bg-teal-50 border-zinc-400", placeholder: 'Correo Electronico' %>
+    </div>
+    <br>
+    <div class=" text-white flex">
+        <%= image_tag 'icons/pass.svg', width: 35, height: 35, class:"imageIcons" %> 
+        <%= form.password_field :password, required: true, class:"w-full text-zinc-600 rounded-2xl bg-teal-50 border-zinc-400", placeholder: 'Contraseña' %>
+    </div>
+    <br>
+    <div class=" text-white flex">
+        <%= image_tag 'icons/phone.svg', width: 35, height: 35, class:"imageIcons" %> 
+        <%= form.text_field :phone, class:"w-full text-zinc-600 rounded-2xl bg-teal-50 border-zinc-400", placeholder: 'Telefono' %>
+    </div>
+    <br>
+    <div>
+        <button class="text-teal-800 font-bold bg-zinc-200 rounded-2xl py-1 px-2 lg:mx-20">
+            <%= form.submit%>        
+        </button>
+    </div>
+<% end %>

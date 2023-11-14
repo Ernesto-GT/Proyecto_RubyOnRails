@@ -1,0 +1,25 @@
+# SQLite. Versions 3.8.0 and up are supported.
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem "sqlite3"
+#
+postgresql: &postgresql
+  adapter: postgresql
+  host: localhost
+  pool: 5
+  timeout: 5000
+  username: postgres
+  password: PSQL1966263
+
+development:
+  <<: *postgresql
+  database: example_development
+
+test:
+  <<: *postgresql
+  database: example_test
+
+production:
+  <<: *postgresql
+  database: example_production
