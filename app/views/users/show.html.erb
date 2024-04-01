@@ -1,9 +1,14 @@
-<%= @usuario.username %>
-    <%= turbo_frame_tag "products-#{@pagy.page}", class: 'products' do %>
+<div class="text-sm text-zinc-800 text-center font-bold">
+    Productos <%= @usuario.username %>
+</div>
+<div class="bg-white rounded-xs my-2 ">
+    <%= turbo_frame_tag "products-#{@pagy.page}", class: 'products flex flex-col w-full sm:flex-row sm:flex-wrap sm:gap-x-2 ' do %>
         <%= render partial: 'products/product', collection: @productos %>    
-        <%=turbo_frame_tag "products-#{@pagy.next}", class: 'products', 
+        <%=turbo_frame_tag "products-#{@pagy.next}", class: 'products flex flex-col w-full sm:flex-row sm:flex-wrap sm:gap-x-2 ', 
             src: pagy_url_for(@pagy, @pagy.next), loading: :lazy if @pagy.next%>  
     <% end %>
+</div>
+
 
 
     

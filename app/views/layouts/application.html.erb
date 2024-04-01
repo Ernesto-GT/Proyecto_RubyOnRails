@@ -1,20 +1,20 @@
-<!DOCTYPE html> <!---En los layouts se agregan las vistas que quieren permanecer en todas las pantallas-->
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <!--Lo importante del aplication original --->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Vendelo | Vende y Compra Productos de Segunda Mano</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+  
   </head>
-
-  <body class="bg-teal-500">
+  <body class="bg-zinc-100 ">
     <%= render 'shared/flash'  %> <!--Direccionamiento de mensajes de alerta y  --->
     <%= render 'shared/header'  %> <!---Direccionando Partial-->
-    <div class="lg:container lg:mx-auto">
+    <div class=""> <!---lg:container lg:mx-auto---->
       <%= yield %>
     </div>
     <%= turbo_frame_tag "modal" %> 

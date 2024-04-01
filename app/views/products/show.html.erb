@@ -1,13 +1,15 @@
-<div class="bg-zinc-50 py-5">
-    <div class="bg-teal-600 rounded-t-xl text-white text-center font-bold mx-4 ">Detalles Producto</div>
-    <div class="bg-gradient-to-t from-teal-200 via-teal-50 to-teal-200 mb-3 mx-4  rounded-b ">   
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+<div class=" bg-white mx-auto my-5 py-5  sm:w-5/6 lg:w-2/4 lg:my-10">
+    <div class=" bg-zinc-500 rounded-t-xl text-white text-center font-bold mx-2 mt-5 py-1 h-full sm:mx-auto sm:w-5/6 lg:w-3/4">Detalles Producto</div>
+    <div class=" bg-gradient-to-t from-zinc-100 via-zinc-50 to-zinc-100 rounded-b mx-2 mb-5 h-full sm:mx-auto sm:w-5/6 lg:w-3/4">   
 
-        <div class="border-2 border-teal-300 rounded-b ">
+        <div class="border-2 border-zinc-300 rounded-b ">
             <div class="text-end text-xs text-blue-700 mr-2">Usuario: <%=@producto.user.username%> </div>
             <div class="mx-5">
                 <div class='text-xl text-center text-zinc-700 font-bold'><%= @producto.title %> &nbsp; $<%= @producto.price %><div>
 
-                <div class=''><%= image_tag @producto.photo if @producto.photo.attached?%> </div>
+                <div class='sm:imagen mx-auto xs:w-3/4 '><%= image_tag @producto.photo if @producto.photo.attached?%> </div>
+                <%= image_tag 'Sin_Imagen.webp', class:"sm:imagen mx-auto xs:w-3/4 border border-zinc-300" unless @producto.photo.attached? %> 
 
                 <div class="flex "><%= render partial: 'favorite', locals: {product: @producto}%></div>
                 <div class="text-justify flex items-center">
@@ -16,29 +18,38 @@
                 </div>
                         
             </div>
-            <div class="text-xs text-green-500 flex">
-                <button class="bg-zinc-100 border-2 border-zinc-400 rounded-xl px-2 py-1">
-                    <%= link_to t('Ver Mas Productos del Perfil', username: @producto.user.username) , user_path(@producto.user.username) %>
-                </button>
-            </div>
+
             <div class="flex bg-center mx-2">
+                <!---<div class="text-xs text-blue-400 flex">
+                    <button>
+                        <%= link_to t('Ver Mas Productos del Perfil', username: @producto.user.username) , user_path(@producto.user.username) %>
+                    </button>
+                </div> --->
+                &nbsp;
                 <div class="text-xs text-green-500 flex">
-                    <button class="bg-zinc-100 border-2 border-zinc-400 rounded-xl px-2 py-1">
+                    <button >
                         <%= link_to 'Editar Producto', edit_product_path if @producto.owner?%>
                     </button>
                 </div>
                 &nbsp;
                 <div class="text-xs text-red-500 flex">
-                    <button class="bg-zinc-100 border-2 border-zinc-400 rounded-xl px-2 py-1">
+                    <button >
                         <%= link_to 'Eliminar Producto', product_path(@producto), data: {
                                 turbo_method: :delete,
                                 turbo_confirm: '¿Estás seguro?'
                             }  if @producto.user == Current.user %>
                     </button>
                 </div>
+                &nbsp;
+                <div class="text-xs text-blue-500 flex"> 
+                    <button>
+                    <%= link_to 'Ver perfil', user_path(@producto.user.username) %>                     
+                    </button>
+                </div>
             </div>
         </div>
     </div>
+    <br> 
 </div>
 
 

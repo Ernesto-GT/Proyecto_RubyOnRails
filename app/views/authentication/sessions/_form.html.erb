@@ -2,17 +2,17 @@
     <br>
     <div class=" text-white flex"> 
         <%= image_tag 'icons/user.svg', width: 35, height: 35, class:"imageIcons" %>     
-        <%= form.text_field :login, required: true, class:"w-full text-zinc-600 rounded-2xl bg-teal-50 border-zinc-400", placeholder: 'Nombre de Usuario o Email'%>
+        <%= form.text_field :login, required: true, class:"w-full text-zinc-600 rounded-xl bg-zinc-50 border-zinc-400 text-xs sm:text_lg", placeholder: 'Nombre de Usuario o Email'%>
     </div>
     <br>
     <div class="text-white my-3 flex">
         <%= image_tag 'icons/pass.svg', width: 30, height: 30, class:"imageIcons" %>
-        <%= form.password_field :password, required: true, class:"w-full text-zinc-600 rounded-2xl bg-teal-50 border-zinc-400", placeholder: 'Contraseña' %>
+        <%= form.password_field :password, required: true, class:"w-full text-zinc-600 rounded-xl bg-zinc-50 border-zinc-400 text-xs sm:text_lg", placeholder: 'Contraseña' %>
     </div>
     <br>
     <div class="bg-center">
-        <button class="text-teal-800 font-bold bg-zinc-200 rounded-2xl py-1 px-2">
-            <%= form.submit%>
+        <button class="text-zinc-800 font-bold bg-zinc-200 rounded-xl py-1 px-2 text-sm sm:text_lg">
+            Entrar
         </button>
     </div>
 

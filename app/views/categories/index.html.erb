@@ -1,11 +1,11 @@
-<!---Categorias Tablet/PC--->
-<div class="hidden sm:block bg-white border-2 rounded-xl mx-20 my-10 border-zinc-500 lg:bg-zinc-50">   
+<!---Categorias PC--->
+<div class="contenedorFondo3 hidden lg:block bg-white border-2 lg:bg-zinc-50 lg:w-1/2 px-20 py-10">   
     <br>
-    <div class="lg:mx-20 lg:my-10 lg:p-5">
-        <div class="bg-center bg-teal-700 rounded-2xl mx-10 my-2 py-2 text-white text-lg text-center font-bold">Categorias</div>
-        <div class="rounded-2xl mx-10 py-2 bg-gradient-to-r from-teal-700 via-teal-500 to-teal-700">
-            <button class="mx-10 my-1">
-                <%= link_to "Nueva Categoria", new_category_path , data: { turbo_frame: "modal" }, class:" bg-cyan-300 text-zinc-800 font-bold rounded-xl p-1" %>
+    <div class="">
+        <div class="bg-center bg-zinc-600 rounded text-white text-lg text-center font-bold  my-2 py-2 px-10">Categorias</div>
+        <div class="rounded bg-gradient-to-r from-zinc-600 via-zinc-400 to-zinc-600 py-2 px-5">
+            <button class="my-1">
+                <%= link_to "Nueva Categoria", new_category_path , data: { turbo_frame: "modal" }, class:" bg-zinc-200 text-zinc-800 font-bold rounded p-1" %>
             </button> 
             <%= render partial: 'category', collection: @categories%>
 
@@ -15,10 +15,10 @@
 </div>
 
 <!--Categorias Movil--->
-<div class="sm:hidden bg-white border-2 rounded-xl mx-5 my-3 border-zinc-500 ">   
+<div class="sm:hidden bg-white border-2 rounded-xl mx-5 my-3   ">   
     <br>
-    <div class="bg-center bg-teal-700 rounded-2xl mx-5 my-2 py-2 text-white text-lg text-center font-bold">Categorias</div>
-    <div class="rounded-2xl mx-5 py-2 bg-gradient-to-r from-teal-700 via-teal-500 to-teal-700">
+    <div class="bg-center bg-zinc-600 rounded mx-5 my-2 py-2 text-white text-lg text-center font-bold">Categorias</div>
+    <div class="  mx-5 py-2 rounded bg-gradient-to-r from-zinc-600 via-zinc-400 to-zinc-600">
 
         <%= render partial: 'category', collection: @categories%>
 
@@ -26,17 +26,18 @@
     <br>
 </div>
 
-<!--Login Tablet
-<div class=" hidden bg-center rounded-xl bg-white mx-20 my-12 px-10 py-5 sm:block lg:hidden">
+<!--Login Tablet--->
+<div class=" hidden sm:block lg:hidden bg-white border-2 px-20  mx-10">   
     <br>
-    <div class="bg-center text-center font-bold text-white rounded-xl bg-zinc-700 mx-20 px-10 py-3" >Categorias </div> 
-    <div class="bg-center rounded-xl bg-zinc-500 mx-20 px-10 py-5">  
-        <%= render partial: 'category', collection: @categories %>
+    <div class="">
+        <div class="bg-center bg-zinc-600 rounded text-white text-lg text-center font-bold  my-2 py-2 px-10">Categorias</div>
+        <div class="rounded bg-gradient-to-r from-zinc-600 via-zinc-400 to-zinc-600 py-2 px-5">
+            <button class="my-1">
+                <%= link_to "Nueva Categoria", new_category_path , data: { turbo_frame: "modal" }, class:" bg-zinc-200 text-zinc-800 font-bold rounded p-1" %>
+            </button> 
+            <%= render partial: 'category', collection: @categories%>
 
-        <%= link_to "Nueva Categoria", new_category_path , data: { turbo_frame: "modal" } %>    
-        <br>
+        </div>
     </div>
     <br>
-    <br>
-</div> --->
-
+</div>

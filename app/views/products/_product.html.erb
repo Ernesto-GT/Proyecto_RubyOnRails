@@ -1,5 +1,5 @@
 <!--Link para direccionar al producto a su Descripsion -->
-<%= link_to product_path(product.id), class: 'product bg-teal-700 my-2 rounded sm:w-[calc(33.33333%_-_.5rem)] lg:w-[calc(25%_-_.5rem)]', 'data-turbo-frame': '_top' do %> 
+<%= link_to product_path(product.id), class: 'product bg-zinc-600 my-2 rounded sm:w-[calc(33.33333%_-_.5rem)] lg:w-[calc(25%_-_.5rem)]', 'data-turbo-frame': '_top' do %> 
     <%= image_tag product.photo.attached? ? product.photo : 'Sin_Imagen.webp', class:"w-full h-60 object-cover rounded-t "%>
     <div class="hover:text-blue-400 border-teal-900">
         <h3 class="font-bold  text-xl text-gray-200 px-2"><%= product.title %> </h3> 

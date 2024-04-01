@@ -1,3 +1,4 @@
+
 <%= form_with(model: category) do |form| %>
   <% if category.errors.any? %>
     <div style="color: red">
@@ -13,14 +14,16 @@
 
   <div class="mx-2">
     <%= form.label :name,"Modificar Nombre", style: "display: block", class:"mx-2 text-white"%>
-    <%= form.text_field :name, class:"w-full my-2 rounded-2xl text-gray-600 bg-white border-teal-700 text-xs sm:text-base", placeholder: 'Ej. Libros'  %>
+    <%= form.text_field :name, class:"w-full my-2 rounded-xl text-gray-600 bg-white border-zinc-600 text-xs sm:text-base", placeholder: 'Ej. Libros'  %>
   </div>
   <br>
-  <div class="flex text-xs mx-1 sm:text-sm sm:mx-5">
-    <button class="bg-cyan-100 border-2 border-cyan-400 text-teal-600 font-bold text-xs sm:text-sm rounded-2xl my-5 p-1">
-      <%= form.submit %>
+  <div class="flex text-xs mx-auto sm:text-sm sm:mx-5">
+    <br>
+    <button class="bg-zinc-100 border-2 border-zinc-300 text-zinc-700 font-bold text-xs sm:text-xs lg:text-sm rounded-xl my-5 p-1 mx-auto">
+      Actualizar
     </button>
-    <button class="bg-cyan-100 border-2 border-cyan-400 text-teal-600 font-bold text-xs sm:text-sm rounded-2xl mx-1 sm:mx-4 my-5 px-4 py-1 flex">
+    <br>
+    <button class="bg-zinc-100 border-2 border-zinc-300 text-zinc-700 font-bold text-xs sm:text-xs lg:text-sm rounded-xl my-5 px-4 py-1 mx-auto flex">
       <%= link_to "Regresar", categories_path %>
     </button>
   </div>

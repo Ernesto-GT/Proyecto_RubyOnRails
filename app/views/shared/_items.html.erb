@@ -1,49 +1,54 @@
 
-<div class="bg-gradient-to-t from-teal-700 via-teal-600 to-teal-700 sm:hidden">
+<div class="bg-gradient-to-t from-zinc-600 via-zinc-500 to-zinc-600 sm:hidden">
     <div class="p-1">  </div>
+     <div class=" flex"> 
+        <%= image_tag 'icons/user.svg', width: 25, height: 25, class:"imageIcons ml-1" if Current.user %>     
+        <%= link_to 'Perfil', user_path(Current.user.username), class: "font-bold text-white  p-2 hover:text-blue-400 sm:text-white" if Current.user%> 
+    </div>
     <div class=" flex"> 
         <%= image_tag 'icons/category.svg', width: 25, height: 25, class:"imageIcons ml-1" if Current.user&.admin? %>     
-        <%= link_to 'Categorias', categories_path, class: "font-bold text-white  p-2 hover:text-teal-500 sm:text-white" if Current.user&.admin?%> 
+        <%= link_to 'Categorias', categories_path, class: "font-bold text-white  p-2 hover:text-blue-400 sm:text-white" if Current.user&.admin?%> 
     </div>
     <div class=" flex">
         <%= image_tag 'icons/tag.svg', width: 25, height: 25, class:"imageIcons ml-1" if Current.user&.admin? %>     
-        <%= link_to "Nueva Categoria", new_category_path , data: { turbo_frame: "modal" }, class:" font-bold text-white p-2 hover:text-teal-500 sm:text-white" if Current.user&.admin?%>
+        <%= link_to "Nueva Categoria", new_category_path , data: { turbo_frame: "modal" }, class:" font-bold text-white p-2 hover:text-blue-400 sm:text-white" if Current.user&.admin?%>
     </div> 
     <div class=" flex">
         <%= image_tag 'icons/add.svg', width: 25, height: 25, class:"imageIcons ml-1" if Current.user %>     
-        <%= link_to 'Añadir Producto', new_product_path, class:" font-bold text-white p-2 hover:text-teal-500 sm:text-white", data: { turbo_frame: "modal" } if Current.user %>
+        <%= link_to 'Añadir Producto', new_product_path, class:" font-bold text-white p-2 hover:text-blue-400 sm:text-white", data: { turbo_frame: "modal" } if Current.user %>
     </div>
     <div class=" flex"> 
         <%= image_tag 'icons/fav.svg', width: 25, height: 25, class:"imageIcons ml-1" if Current.user%>     
-        <%= link_to 'Favoritos', favorites_path, class:"font-bold text-white p-2 sm:text-white hover:text-teal-500" if Current.user %>
+        <%= link_to 'Favoritos', favorites_path, class:"font-bold text-white p-2 sm:text-white hover:text-blue-400" if Current.user %>
     </div>
     <div class="flex"> 
         <%= image_tag 'icons/log.svg', width: 25, height: 25, class:"imageIcons ml-1" unless Current.user %>     
-        <%= link_to 'Iniciar Sesion', new_session_path, class:"font-bold text-white p-2 sm:text-white hover:text-teal-500" unless Current.user%>
+        <%= link_to 'Iniciar Sesion', new_session_path, class:"font-bold text-white p-2 sm:text-white hover:text-blue-400" unless Current.user%>
     </div>
     <div class="flex"> 
         <%= image_tag 'icons/new.svg', width: 25, height: 25, class:"imageIcons ml-1" unless Current.user %>     
-        <%= link_to 'Registarse', new_user_path, class:"font-bold text-white p-2 sm:text-white hover:text-teal-500" unless Current.user%>
+        <%= link_to 'Registarse', new_user_path, class:"font-bold text-white p-2 sm:text-white hover:text-blue-400" unless Current.user%>
     </div>
     <div  class="p-1 flex">
         <%= image_tag 'icons/exit.svg', width: 25, height: 25, class:"imageIcons " if Current.user %>     
         <%= link_to 'Cerrar Sesion', session_path(Current.user.id), data: {
             turbo_method: :delete, 
             turbo_confirm: 'Confimacion'
-        }, class:"font-bold text-white mx-2 sm:text-white hover:text-teal-500" if Current.user%> 
+        }, class:"font-bold text-white mx-2 sm:text-white hover:text-blue-400" if Current.user%> 
     </div>
 </div>
 
-<div class="hidden sm:block ">   
-<%= link_to 'Categorias', categories_path, class: "font-bold text-white  mx-2 hover:text-teal-500 sm:text-white" if Current.user&.admin?%> 
-<%= link_to 'Añadir Producto', new_product_path, class:"font-bold text-white mx-2 hover:text-teal-500 sm:text-white", data: { turbo_frame: "modal" } if Current.user %>
-<%= link_to 'Favoritos', favorites_path, class:" font-bold text-white mx-2 sm:text-white hover:text-teal-500" if Current.user %>
-<%= link_to 'Iniciar Sesion', new_session_path, class:" font-bold text-white mx-2 sm:text-white hover:text-teal-500" unless Current.user%>
-<%= link_to 'Registarse', new_user_path, class:" font-bold text-white mx-2 sm:text-white hover:text-teal-500" unless Current.user%>
+<div class="hidden sm:block ">
+<%= link_to 'Perfil', user_path(Current.user.username) , class: "font-bold text-white  mx-2 hover:text-blue-400 sm:text-white" if Current.user%> 
+<%= link_to 'Categorias', categories_path, class: "font-bold text-white  mx-2 hover:text-blue-400 sm:text-white" if Current.user&.admin?%> 
+<%= link_to 'Añadir Producto', new_product_path, class:"font-bold text-white mx-2 hover:text-blue-400 sm:text-white", data: { turbo_frame: "modal" } if Current.user %>
+<%= link_to 'Favoritos', favorites_path, class:" font-bold text-white mx-2 sm:text-white hover:text-blue-400" if Current.user %>
+<%= link_to 'Iniciar Sesion', new_session_path, class:" font-bold text-white mx-2 sm:text-white hover:text-blue-400" unless Current.user%>
+<%= link_to 'Registarse', new_user_path, class:" font-bold text-white mx-2 sm:text-white hover:text-blue-400" unless Current.user%>
 <%= link_to 'Cerrar Sesion', session_path(Current.user.id), data: {
         turbo_method: :delete, 
         turbo_confirm: 'Confimacion'
-    }, class:" font-bold text-white mx-2 sm:text-white hover:text-teal-500"if Current.user%> 
+    }, class:" font-bold text-white mx-2 sm:text-white hover:text-blue-400"if Current.user%> 
 
 </div>
 

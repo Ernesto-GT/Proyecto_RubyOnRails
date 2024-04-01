@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'home/index'
   namespace :authentication, path: '', as: ''  do
     resources :users, only: [:new, :create], path: '/register', path_names: {new: '/'}
     resources :sessions, only: [:new, :create, :destroy], path: '/login', path_names: {new: '/'}
@@ -16,9 +17,14 @@ Rails.application.routes.draw do
   get '/products/new', to: 'products#new', as: :new_product
   get '/products', to: 'products#index'
   get '/products/:id', to: 'products#show', as: :product
-  get '/products/:id/edit', to: 'products#edit', as: :edit_product 
+  get '/products/:id/edit', to: 'products#edit', as: :edit_product
 
+  get '/home', to: 'home#index'
+
+ 
   resources :favorites, only: [:index, :create, :destroy], param: :product_id
   resources :users, only: :show, path: '/user', param: :username
-  resources :products, path: '/' 
+  resources :home, path: '/' 
+
+  
 end

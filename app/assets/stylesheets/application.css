@@ -1,4 +1,85 @@
-
+ 
 .imageIcons{
     filter: invert(100%) sepia(100%) saturate(15%) hue-rotate(254deg) brightness(103%) contrast(105%)
+}
+
+.login{
+    width: 350px;
+}
+
+.imagen{
+  text-align: center;
+  width: 350px;
+  height: 200;
+
+}
+
+.Fondo{
+  position: absolute;
+  height: 400px;
+}
+
+.contIcon{
+  position: absolute;
+  height: 25px;
+  top: 1%;
+  left: 1%;
+  transform: translate(50%, 0%);
+}
+
+.contenedorBase {
+    position: relative;
+
+  }
+  .contenedorFondo{
+    position: absolute;
+    height: 550px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+  }
+  .contenedorFondo2{
+    position: absolute;
+    height: 550px;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+  }
+  .contenedorFondo3{
+    position: absolute;
+    height: 800px;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+  }
+  .tituloProduct{
+    position: absolute;
+    width: 600px;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);    
+  }
+  .contenedorFondoProduct{
+    position: absolute;
+    width: 600px;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -10%);    
+
+  }
+  .contenedorInfo {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-75%, 20%);
+  }
+  .contenedorTitulo {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-75%, 0%);
+  }
+
+.caroucel{
+  height: 480px;
 }

@@ -10,6 +10,6 @@ class UsersController < ApplicationController
 
         order_by = Product::ORDER_BY.fetch(params[:order_by]&.to_sym, Product::ORDER_BY[:newest])
         @productos = @productos.order(order_by).load_async 
-        @pagy, @productos = pagy_countless(@productos, items: 5)    
+        @pagy, @productos = pagy_countless(@productos, items: 12)    
     end
 end 

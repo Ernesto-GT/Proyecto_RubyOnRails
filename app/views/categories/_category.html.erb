@@ -1,17 +1,18 @@
 
 <div id="<%= dom_id category %>">
-
-  <p class="bg-zinc-50 rounded-xl text-center border-zinc-400 mx-6 my-3 py-2 text-sm font-bold sm:text-base">   
+    
+  <p class="bg-zinc-50 rounded  border-zinc-400 mx-6 my-3 py-2 text-sm font-bold sm:text-base">   
+    &nbsp;
     &nbsp; 
     <%= category.name %>
 
     &nbsp;
-    <button class="bg-green-300 text-xs text-zinc-800 rounded-xl p-1 sm:text-sm">
+    <button class="bg-green-300 text-xs text-zinc-800 rounded p-1 sm:text-sm">
       <%= link_to  'Editar', edit_category_path(category)%>  
     </button>
 
     &nbsp;
-    <button class="bg-red-300 text-xs text-zinc-800 rounded-xl p-1 sm:text-sm">
+    <button class="bg-red-300 text-xs text-zinc-800 rounded p-1 sm:text-sm">
       <%= link_to 'Eliminar', category_path(category), data: {
         turbo_method: :delete,
         #turbo_confirm: t('common.confirm')

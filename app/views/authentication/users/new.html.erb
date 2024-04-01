@@ -1,6 +1,6 @@
 
 <!--Login Tablet--->
-<div class=" hidden bg-center rounded-xl bg-white mx-20 my-12 px-10 py-5 sm:block lg:hidden">
+<div class=" hidden bg-center rounded-xl bg-white border border-zinc-300 mx-20 my-12 px-10 py-5 sm:block lg:hidden">
     <br>
     <div class="bg-center text-center font-bold text-white rounded-xl bg-zinc-700 mx-20 my-1 px-10 py-3" >Registrarse </div> 
     <div class="bg-center rounded-xl bg-gradient-to-t from-zinc-700 via-zinc-500 to-zinc-700 mx-20 px-10 py-5">  
@@ -21,18 +21,21 @@
     </div>
     <br>
     <br>
-     <br>
+    <br>
 </div>
 
 <!--Login PC--->
-<div class="hidden bg-center rounded-xl bg-white mx-20 my-12 px-1 py-20 lg:block">
-    <div class=" mx-20"> <div>  
+<div class="contenedorBase">
+    <div class="contenedorFondo hidden rounded-xl bg-white bg-center border border-zinc-300 w-1/2 my-20 py-20 px-1 lg:block"> <div>  
         <br>
-        <div class="bg-center text-center font-bold text-white rounded-xl bg-zinc-700 mx-20 my-2 px-10 py-3" >Registrarse</div> 
-        <div class="bg-center rounded-xl bg-gradient-to-t from-zinc-700 via-zinc-500 to-zinc-700 mx-20 px-10 py-5">  
-            <%= render 'form', class:"grap-x-2" %>
-            <br>
+        <div class="">
+            <div class="contenedorTitulo text-center font-bold text-white rounded-xl bg-zinc-700 login mx-20 my-2 px-10 py-3" >Registrarse</div> 
+            <div class="contenedorInfo rounded-xl bg-gradient-to-t from-zinc-700 via-zinc-500 to-zinc-700 login mx-20 px-10 py-5">  
+                <%= render 'form', class:"grap-x-2" %>
+                <br>
+            </div>
         </div>
+
         <br>
         <br>
     </div>

@@ -18,10 +18,10 @@ class CategoryComponent < ViewComponent::Base
     @category&.id == params[:category_id].to_i
   end 
   def background 
-    active? ? "bg-gray-300 text-teal-200" : "bg-white border-gray-600"
+    active? ? "bg-gray-300 text-blue-500" : "bg-white border-gray-600"
   end
 
   def classes
-    "text-teal-800 px-4 py-1 rounded-2xl drop-shadow-sm  hover:border-gray-500 hover:bg-gray-300 hover:text-blue-500 #{background}" 
+    "text-zinc-800 px-4 py-1 rounded-xl drop-shadow-sm  hover:border-gray-500 hover:bg-gray-300 hover:text-blue-400 #{background}" 
   end
 end

@@ -1,0 +1,12 @@
+#Carrusel de photos
+--- 
+- :first:
+    :link:  first
+    :image: imagen_carrusel.jpg 
+    :title: Our amazing Approach
+    :text:  Explore our unique Solution for all your Problems.
+- :second:
+    :link:  option
+    :image: imagen2_carrusel.jpg
+    :title: Feedback
+    :text:  We encourage you to provide critical feedback.
